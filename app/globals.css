@@ -1,26 +1,82 @@
-@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #fffaf3;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background: #ff7043;
+  color: white;
+  padding: 22px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h2 {
+  font-size: 26px;
+}
+
+.navbar span {
+  font-size: 15px;
+}
+
+main {
+  padding: 50px 8%;
+}
+
+main h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+.recipe-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+
+.recipe-card h2 {
+  color: #ff7043;
+  margin-bottom: 15px;
+}
+
+.recipe-card p {
+  margin-top: 10px;
+  color: #666;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main {
+    padding: 30px 5%;
+  }
+
+  main h1 {
+    font-size: 28px;
+  }
 }
